@@ -20,7 +20,15 @@ while True:
             pygame.quit()
             sys.exit()
         if event.type == KEYDOWN:
-            y += 1
+            if event.key == K_DOWN:
+                y += 5
+            if event.key == K_UP:
+                y -= 5
+            if event.key == K_LEFT:
+                 x -= 5
+            if event.key == K_RIGHT:
+                x += 5
+
 
     # Update.
 
