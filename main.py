@@ -12,6 +12,8 @@ width, height = 640, 480
 screen = pygame.display.set_mode((width, height))
 
 x, y = 320, 240
+moveLeft = False
+moveRight = False
 
 # Game loop.
 while True:
@@ -25,13 +27,20 @@ while True:
             if event.key == K_UP:
                 y -= 5
             if event.key == K_LEFT:
-                 x -= 5
+                 moveLeft = True
             if event.key == K_RIGHT:
-                x += 5
+                moveRight = True
+        if event.type == MOUSEBUTTONDOWN:
+            y = event.pos[1]
+            x = event.pos[0]
+            print(event)
 
 
     # Update.
-
+    if moveLeft:
+     x -= 1
+    if moveRight:
+     x += 1
     # Draw.
     screen.fill((255, 255, 255))
     pygame.draw.circle(
