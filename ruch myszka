@@ -1,5 +1,5 @@
 import os,sys
-import pygame as pg #lazy but responsible (avoid namespace flooding)
+import pygame as pg
 
 class Character:
     def __init__(self,rect):
